@@ -1,33 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="favicon-32x32.png" type="image/x-icon" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Advice Generator App</title>
-  </head>
-  <body>
-    <div class="container">
-      <h1 class="title">Advice #</h1>
-      <p class="text"></p>
 
-      <picture>
-        <source
-          media="(min-width: 768px)"
-          srcset="./images/pattern-divider-desktop.svg"
-        />
-        <img src="./images/pattern-divider-mobile.svg" alt="divider" />
-      </picture>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="favicon-32x32.png" type="image/x-icon" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <!-- GSAP for animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <title>Premium Advice Generator</title>
+</head>
 
-      <div>
-        <button onclick="fetchAdvice()">
-          <img src="./images/icon-dice.svg" alt="" />
-        </button>
-      </div>
+<body>
+  <!-- Animated background -->
+  <div class="background-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+  </div>
+
+  <div class="container">
+    <h1 class="title">Advice #0</h1>
+    <p class="text">"Loading wisdom..."</p>
+
+    <div class="actions-container">
+      <button class="action-btn" id="copy-btn" title="Copy to clipboard">
+        <i class="ph ph-copy"></i>
+      </button>
+      <button class="action-btn" id="tts-btn" title="Listen to advice">
+        <i class="ph ph-speaker-high"></i>
+      </button>
+      <button class="action-btn" id="share-btn" title="Share on Twitter">
+        <i class="ph ph-twitter-logo"></i>
+      </button>
     </div>
 
-    <script src="app.js"></script>
-  </body>
+    <div class="divider">
+      <picture>
+        <source media="(min-width: 768px)" srcset="./images/pattern-divider-desktop.svg" />
+        <img src="./images/pattern-divider-mobile.svg" alt="divider" />
+      </picture>
+    </div>
+
+    <button class="dice-button" id="trigger-advice">
+      <img src="./images/icon-dice.svg" alt="Generate advice" />
+    </button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
 </html>
